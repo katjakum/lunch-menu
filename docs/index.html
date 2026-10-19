@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kuopio lounas</title>
+<style>
+  :root {
+    --bg: #fafaf7; --fg: #1c1c1a; --muted: #6b6b66; --card: #ffffff; --line: #e2e2db;
+    --accent: #2f7d4f; --meat: #b3261e; --fish: #1f5f99; --unsure: #9a5b00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161614; --fg: #ecece6; --muted: #9a9a92; --card: #1f1f1c; --line: #33332f;
+      --accent: #5fbf86; --meat: #ef7b73; --fish: #7db4e8; --unsure: #e0a24a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.45 system-ui, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 16px; }
+  h1 { font-size: 1.4rem; margin: 0 0 12px; }
+  .controls { display: grid; gap: 10px; margin-bottom: 16px; }
+  .row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  button.chip, label.chip {
+    border: 1px solid var(--line); background: var(--card); color: var(--fg);
+    padding: 6px 12px; border-radius: 999px; font: inherit; font-size: .9rem; cursor: pointer;
+  }
+  button.chip[aria-pressed="true"], label.chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  label.chip input { margin-right: 6px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 14px; }
+  .card h2 { font-size: 1.1rem; margin: 0; }
+  .sub { color: var(--muted); font-size: .85rem; }
+  .meal { padding: 10px 0; border-top: 1px solid var(--line); }
+  .meal:first-of-type { border-top: 0; }
+  .meal-head { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; font-weight: 600; }
+  .price { font-weight: 400; color: var(--muted); white-space: nowrap; }
+  .dish { margin: 2px 0 0; }
+  .codes { color: var(--muted); font-size: .78rem; margin-left: 6px; }
+  .badge { font-size: .72rem; padding: 1px 7px; border-radius: 999px; border: 1px solid currentColor; margin-left: 6px; font-weight: 500; }
+  .b-veg, .b-vegan { color: var(--accent); }
+  .b-fish { color: var(--fish); }
+  .b-meat { color: var(--meat); }
+  .b-unsure { color: var(--unsure); }
+  .empty { color: var(--muted); padding: 8px 0; }
+  .stale { color: var(--unsure); font-size: .85rem; }
+  footer { color: var(--muted); font-size: .8rem; margin-top: 20px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Kuopio lounas</h1>
+  <div class="controls">
+    <div class="row" id="days"></div>
+    <div class="row" id="modes"></div>
+    <div class="row" id="options"></div>
+    <div class="row" id="restaurants"></div>
+  </div>
+  <div id="out"></div>
+  <footer id="foot"></footer>
+</main>
+
+<script src="filters.js"></script>
+<script>
+const MODES = [
+  ["all", "All"],
+  ["nomeat", "No meat (fish ok)"],
+  ["vegetarian", "No meat, no fish"],
+  ["vegan", "Vegan"],
+];
+const STORE_KEY = "lunch-menu-settings-v1";
+const state = { mode: "nomeat", unsure: true, desserts: false, hidden: {}, day: null };
+let data = null;
+
+function loadSettings() {
+  try { Object.assign(state, JSON.parse(localStorage.getItem(STORE_KEY) || "{}")); } catch (e) {}
+}
+function saveSettings() {
+  try {
+    localStorage.setItem(STORE_KEY, JSON.stringify(
+      { mode: state.mode, unsure: state.unsure, desserts: state.desserts, hidden: state.hidden }));
+  } catch (e) {}
+}
+
+function el(tag, props, ...kids) {
+  const n = document.createElement(tag);
+  Object.assign(n, props || {});
+  for (const k of kids) n.append(k);
+  return n;
+}
+
+function todayHelsinki() {
+  return new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Helsinki" }).format(new Date());
+}
+function dayLabel(iso) {
+  return new Date(iso + "T12:00:00").toLocaleDateString("fi-FI", { weekday: "short", day: "numeric", month: "numeric" });
+}
+function euro(n) { return n.toFixed(2).replace(".", ",") + " €"; }
+
+function allDates() {
+  const set = new Set();
+  for (const r of data.restaurants) for (const d of r.days) if (d.meals.length) set.add(d.date);
+  return [...set].sort();
+}
+
+function renderControls() {
+  const days = el("div", { className: "row" });
+  const dates = allDates();
+  if (!state.day || !dates.includes(state.day)) {
+    const t = todayHelsinki();
+    state.day = dates.includes(t) ? t : (dates.find((d) => d >= t) || dates[0]);
+  }
+  for (const d of dates) {
+    const b = el("button", { className: "chip", textContent: dayLabel(d) });
+    b.setAttribute("aria-pressed", String(d === state.day));
+    b.onclick = () => { state.day = d; render(); };
+    days.append(b);
+  }
+  document.getElementById("days").replaceWith(Object.assign(days, { id: "days" }));
+
+  const modes = el("div", { className: "row", id: "modes" });
+  for (const [key, label] of MODES) {
+    const b = el("button", { className: "chip", textContent: label });
+    b.setAttribute("aria-pressed", String(state.mode === key));
+    b.onclick = () => { state.mode = key; saveSettings(); render(); };
+    modes.append(b);
+  }
+  document.getElementById("modes").replaceWith(modes);
+
+  const opts = el("div", { className: "row", id: "options" });
+  opts.append(checkbox("Include “not sure” dishes", state.unsure, (v) => { state.unsure = v; }));
+  opts.append(checkbox("Show desserts", state.desserts, (v) => { state.desserts = v; }));
+  document.getElementById("options").replaceWith(opts);
+
+  const rs = el("div", { className: "row", id: "restaurants" });
+  for (const r of data.restaurants) {
+    rs.append(checkbox(r.name, !state.hidden[r.id], (v) => { state.hidden[r.id] = !v; }));
+  }
+  document.getElementById("restaurants").replaceWith(rs);
+}
+
+function checkbox(label, checked, onchange) {
+  const input = el("input", { type: "checkbox", checked });
+  const l = el("label", { className: "chip" + (checked ? " on" : "") }, input, label);
+  input.onchange = () => { onchange(input.checked); saveSettings(); render(); };
+  return l;
+}
+
+function badge(status) {
+  const text = { veg: "veg", vegan: "vegan", fish: "fish", meat: "meat", unsure: "?" }[status];
+  return el("span", { className: "badge b-" + status, textContent: text, title: status === "unsure" ? "Could not tell from the name or tags" : "" });
+}
+
+function renderRestaurant(r) {
+  const card = el("section", { className: "card" });
+  const head = el("div", { className: "row" }, el("h2", { textContent: r.name }));
+  const day = r.days.find((d) => d.date === state.day);
+  if (day && day.lunchTime) head.append(el("span", { className: "sub", textContent: day.lunchTime }));
+  if (r.stale) head.append(el("span", { className: "stale", textContent: "data may be out of date" }));
+  card.append(head);
+
+  let shown = 0;
+  for (const meal of (day ? day.meals : [])) {
+    if (!state.desserts && MenuFilters.isDessert(meal.category)) continue;
+    const status = MenuFilters.classifyMeal(meal);
+    if (!MenuFilters.visible(status, state.mode, state.unsure)) continue;
+    shown++;
+    const m = el("div", { className: "meal" });
+    const title = el("span", { textContent: meal.category || "Lunch" });
+    title.append(badge(status));
+    const price = meal.studentPrice != null ? "student " + euro(meal.studentPrice) : "no student price";
+    m.append(el("div", { className: "meal-head" }, title, el("span", { className: "price", textContent: price })));
+    for (const dish of meal.dishes) {
+      const line = el("div", { className: "dish", textContent: dish.name });
+      if (dish.diets.length) line.append(el("span", { className: "codes", textContent: dish.diets.join(" ") }));
+      m.append(line);
+    }
+    card.append(m);
+  }
+  if (!shown) card.append(el("div", { className: "empty", textContent: day && day.meals.length ? "Nothing matches your filters." : "No menu for this day." }));
+  return card;
+}
+
+function render() {
+  renderControls();
+  const out = document.getElementById("out");
+  out.replaceChildren(...data.restaurants.filter((r) => !state.hidden[r.id]).map(renderRestaurant));
+  const upd = data.updatedAt ? new Date(data.updatedAt).toLocaleString("fi-FI") : "unknown";
+  document.getElementById("foot").textContent =
+    "Menus updated " + upd + ". Diet tags and the meat filter are automatic and can be wrong; check allergens at the restaurant.";
+}
+
+loadSettings();
+fetch("menus.json", { cache: "no-cache" })
+  .then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+  .then((d) => { data = d; render(); })
+  .catch((e) => { document.getElementById("out").textContent = "Could not load menus.json (" + e.message + ")."; });
+</script>
+</body>
+</html>

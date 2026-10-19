@@ -1,0 +1,49 @@
+{
+  "RestaurantName": "Itä-Suomen yliopisto/Snellmania",
+  "RestaurantUrl": "https://www.compass-group.fi/ravintolat-ja-ruokalistat/foodco/kaupungit/kuopio/ita-suomen-yliopistosnellmania/",
+  "PriceHeader": null,
+  "Footer": "Huomioithan...",
+  "ErrorText": null,
+  "MenusForDays": [
+    {
+      "Date": "2026-10-19T00:00:00+00:00",
+      "LunchTime": "10:30–14:30",
+      "SetMenus": [
+        {"SortOrder": 6, "Name": "Kasviskeitto", "Price": "Opiskelija 1,46 € / Henkilökunta 4,59 € / Vierailija 4,59 €",
+         "Components": ["Linssi-kikhernekeitto Berkoukeh (*, A, ILM, L, M, Veg)", "Paahdettuja siemeniä (G, L, M, Veg)"]},
+        {"SortOrder": 8, "Name": "Kasvislounas", "Price": "Opiskelija 1,87 € / Henkilökunta 5,03 € / Vierailija 5,03 €",
+         "Components": ["Kasvisbolognesea (*, A, G, ILM, L, M, Veg)", "Luomutäysjyväpastaa (*, A, ILM, L, M, Veg)"]},
+        {"SortOrder": 9, "Name": "Kotiruokalounas", "Price": "Opiskelija 2,95 € / Henkilökunta 6,19 € / Vierailija 6,22 €",
+         "Components": ["Jauhelihapihvejä ja metsäsienikastiketta (*, A, L)", "Paahdettua perunaa (*, G, ILM, L, M, Veg)"]},
+        {"SortOrder": 10, "Name": "Annosruoka", "Price": "Opiskelija 5,60 € / Henkilökunta 9,05 € / Vierailija 12,50 €",
+         "Components": ["Pitkään haudutettua nautaa (G, L, M)", "Punaviinikastiketta (G, L, M, VS)", "Lämmintä perunasalaattia ja pikkelöityä punasipulia (G, L, M, Veg)"]},
+        {"SortOrder": 12, "Name": "Pieni makea ihana", "Price": "Opiskelija 0,66€ / Henkilökunta 0,66 € / Vierailija 1,40 €",
+         "Components": ["Banoffee-juustokakkumousse (A, L)"]}
+      ]
+    },
+    {
+      "Date": "2026-10-20T00:00:00+00:00",
+      "LunchTime": "10:30–14:30",
+      "SetMenus": [
+        {"SortOrder": 6, "Name": "Kasviskeitto", "Price": "Opiskelija 1,46 € / Henkilökunta 4,59 € / Vierailija 4,59 €",
+         "Components": ["Tomaattikeittoa (*, A, ILM, L)", "Paahdettuja siemeniä (G, L, M, Veg)"]},
+        {"SortOrder": 8, "Name": "Kasvislounas", "Price": "Opiskelija 1,87 € / Henkilökunta 5,03 € / Vierailija 5,03 €",
+         "Components": ["Bataatti-kookoscurrya (*, A, ILM, L, M, Veg, VS)", "Tummaa riisiä (*, G, L, M, Veg)"]},
+        {"SortOrder": 9, "Name": "Kotiruokalounas", "Price": "Opiskelija 2,95 € / Henkilökunta 6,19 € / Vierailija 6,22 €",
+         "Components": ["Kylmäsavulohipastaa ja tilliä (*, A, ILM, L, VS)"]},
+        {"SortOrder": 10, "Name": "Annosruoka", "Price": "Opiskelija 5,60 € / Henkilökunta 9,05 € / Vierailija 12,50 €",
+         "Components": ["Kanaa Kiovan tapaan (A, L, VS)", "Pestorossojogurttia (A, G, VL, VS)"]}
+      ]
+    },
+    {
+      "Date": "2026-10-23T00:00:00+00:00",
+      "LunchTime": "10:30–14:00",
+      "SetMenus": [
+        {"SortOrder": 6, "Name": "Kasvislounas", "Price": "Opiskelija 1,87 € / Henkilökunta 5,03 € / Vierailija 5,03€",
+         "Components": ["Gratinoitua halloumi-kasvispastaa (*, A, ILM, VL)"]},
+        {"SortOrder": 7, "Name": "Kotiruokalounas", "Price": "Opiskelija 2,95 € / Henkilökunta 6,19 € / Vierailija 6,22€",
+         "Components": ["Kalapyöryköitä (*, A, G, ILM, L, M)", "Tartarjogurttia (*, A, G, L)"]}
+      ]
+    }
+  ]
+}
