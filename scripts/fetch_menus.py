@@ -16,11 +16,16 @@ from pathlib import Path
 
 import requests
 
+import antell
+
 FEED_URL = "https://www.compass-group.fi/menuapi/feed/json"
+# source "compass" (default) uses the Compass JSON feed; "antell" reads the Antell weekly list
 RESTAURANTS = [
     {"id": "snellmania", "name": "Snellmania", "costNumber": "0437"},
     {"id": "tietoteknia", "name": "Tietoteknia", "costNumber": "0439"},
     {"id": "canthia", "name": "Canthia", "costNumber": "0436"},
+    {"id": "antell-round", "name": "Antell Round", "source": "antell",
+     "url": "https://antell.fi/lounas/kuopio/round/"},
 ]
 OUT_FILE = Path(__file__).resolve().parent.parent / "docs" / "menus.json"
 HEADERS = {"User-Agent": "lunch-menu-hobby-project/1.0"}
@@ -77,6 +82,8 @@ def fetch_restaurant(r: dict) -> dict:
     last_err = None
     for attempt in range(2):
         try:
+            if r.get("source") == "antell":
+                return antell.fetch(r)
             resp = requests.get(
                 FEED_URL,
                 params={"costNumber": r["costNumber"], "language": "fi"},
