@@ -67,6 +67,7 @@ const MODES = [
   ["vegetarian", "No meat, no fish"],
   ["vegan", "Vegan"],
 ];
+const DAYS_AHEAD = 3; // show today plus this many days ahead; change the number to show more or fewer
 const STORE_KEY = "lunch-menu-settings-v1";
 const state = { mode: "nomeat", unsure: true, desserts: false, hidden: {}, day: null };
 let data = null;
@@ -104,10 +105,11 @@ function allDates() {
 
 function renderControls() {
   const days = el("div", { className: "row" });
-  const dates = allDates();
+  const t = todayHelsinki();
+  // Only days with a menu somewhere, from today up to DAYS_AHEAD days later. Past days are never shown.
+  const dates = MenuFilters.upcomingDates(allDates(), t, DAYS_AHEAD);
   if (!state.day || !dates.includes(state.day)) {
-    const t = todayHelsinki();
-    state.day = dates.includes(t) ? t : (dates.find((d) => d >= t) || dates[0]);
+    state.day = dates.includes(t) ? t : dates[0];
   }
   for (const d of dates) {
     const b = el("button", { className: "chip", textContent: dayLabel(d) });
@@ -176,14 +178,18 @@ function renderRestaurant(r) {
     }
     card.append(m);
   }
-  if (!shown) card.append(el("div", { className: "empty", textContent: day && day.meals.length ? "Nothing matches your filters." : "No menu for this day." }));
+  if (!shown) card.append(el("div", { className: "empty", textContent: day && day.meals.length ? "Nothing matches your filters." : "Closed, or no menu published." }));
   return card;
 }
 
 function render() {
   renderControls();
   const out = document.getElementById("out");
-  out.replaceChildren(...data.restaurants.filter((r) => !state.hidden[r.id]).map(renderRestaurant));
+  if (!state.day) {
+    out.replaceChildren(el("div", { className: "empty", textContent: "No upcoming menus yet. The menus update on weekday mornings." }));
+  } else {
+    out.replaceChildren(...data.restaurants.filter((r) => !state.hidden[r.id]).map(renderRestaurant));
+  }
   const upd = data.updatedAt ? new Date(data.updatedAt).toLocaleString("fi-FI") : "unknown";
   document.getElementById("foot").textContent =
     "Menus updated " + upd + ". Diet tags and the meat filter are automatic and can be wrong; check allergens at the restaurant.";

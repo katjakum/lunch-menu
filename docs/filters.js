@@ -55,7 +55,19 @@
     return DESSERT.test(category || "");
   }
 
-  const api = { classifyDish, classifyMeal, visible, isDessert };
+  function addDays(iso, n) {
+    const d = new Date(iso + "T12:00:00Z");
+    d.setUTCDate(d.getUTCDate() + n);
+    return d.toISOString().slice(0, 10);
+  }
+
+  // Keeps only dates from today up to `daysAhead` calendar days later (YYYY-MM-DD strings).
+  function upcomingDates(dates, todayIso, daysAhead) {
+    const last = addDays(todayIso, daysAhead);
+    return dates.filter((d) => d >= todayIso && d <= last).sort();
+  }
+
+  const api = { classifyDish, classifyMeal, visible, isDessert, upcomingDates };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.MenuFilters = api;
 })(typeof self !== "undefined" ? self : this);

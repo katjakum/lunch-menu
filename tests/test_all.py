@@ -187,4 +187,26 @@ else:
     for key, status in want_antell.items():
         check(got_a.get(key) == status, f"Antell {key[0]} {key[1]} -> {status} (got {got_a.get(key)})")
 
+# --- date window (JS)
+js2 = r"""
+const f = require(process.argv[1] + '/docs/filters.js');
+const all = ['2026-10-19','2026-10-20','2026-10-21','2026-10-22','2026-10-23','2026-10-24','2026-10-25','2026-10-26'];
+console.log(JSON.stringify([
+  f.upcomingDates(all, '2026-10-22', 3),
+  f.upcomingDates(all, '2026-10-24', 3),
+  f.upcomingDates(all, '2026-11-30', 3),
+  f.upcomingDates(['2026-12-30','2027-01-02','2027-01-05'], '2026-12-30', 3),
+]));
+"""
+res2 = subprocess.run(["node", "-e", js2, str(ROOT)], capture_output=True, text=True)
+if res2.returncode != 0:
+    print(res2.stderr)
+    check(False, "node date window ran")
+else:
+    w = json.loads(res2.stdout)
+    check(w[0] == ["2026-10-22", "2026-10-23", "2026-10-24", "2026-10-25"], "window: today + 3 days, past days hidden")
+    check(w[1] == ["2026-10-24", "2026-10-25", "2026-10-26"], "window: near the end of the data")
+    check(w[2] == [], "window: nothing upcoming gives an empty list")
+    check(w[3] == ["2026-12-30", "2027-01-02"], "window: works across the new year")
+
 sys.exit(1 if check.failed else 0)
