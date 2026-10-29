@@ -62,7 +62,6 @@
   <div class="controls">
     <fieldset class="control-group"><legend>Day</legend><div class="row" id="days"></div></fieldset>
     <fieldset class="control-group"><legend>Diet</legend><div class="row" id="modes"></div></fieldset>
-    <fieldset class="control-group"><legend>Menu options</legend><div class="toggle-list" id="options"></div></fieldset>
     <fieldset class="control-group"><legend>Show restaurants</legend><div class="toggle-list" id="restaurants"></div></fieldset>
   </div>
   <div id="out"></div>
@@ -137,11 +136,6 @@ function renderControls() {
     modes.append(b);
   }
   document.getElementById("modes").replaceWith(modes);
-
-  const opts = el("div", { className: "toggle-list", id: "options" });
-  opts.append(checkbox("Include dishes with unknown diet", "option-unsure", state.unsure, (v) => { state.unsure = v; }));
-  opts.append(checkbox("Show desserts", "option-desserts", state.desserts, (v) => { state.desserts = v; }));
-  document.getElementById("options").replaceWith(opts);
 
   const rs = el("div", { className: "toggle-list", id: "restaurants" });
   for (const r of data.restaurants) {
