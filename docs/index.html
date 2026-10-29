@@ -61,7 +61,6 @@
   <h1>Kuopio lounas</h1>
   <div class="controls">
     <fieldset class="control-group"><legend>Day</legend><div class="row" id="days"></div></fieldset>
-    <fieldset class="control-group"><legend>Diet</legend><div class="row" id="modes"></div></fieldset>
     <fieldset class="control-group"><legend>Show restaurants</legend><div class="toggle-list" id="restaurants"></div></fieldset>
   </div>
   <div id="out"></div>
@@ -70,24 +69,21 @@
 
 <script src="filters.js"></script>
 <script>
-const MODES = [
-  ["all", "All"],
-  ["nomeat", "No meat (fish ok)"],
-  ["vegetarian", "No meat, no fish"],
-  ["vegan", "Vegan"],
-];
 const DAYS_AHEAD = 3; // show today plus this many days ahead; change the number to show more or fewer
 const STORE_KEY = "lunch-menu-settings-v1";
-const state = { mode: "nomeat", unsure: true, desserts: false, hidden: {}, day: null };
+const state = { hidden: {}, day: null };
 let data = null;
 
 function loadSettings() {
-  try { Object.assign(state, JSON.parse(localStorage.getItem(STORE_KEY) || "{}")); } catch (e) {}
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORE_KEY) || "{}");
+    state.hidden = saved.hidden || {};
+  } catch (e) {}
 }
 function saveSettings() {
   try {
     localStorage.setItem(STORE_KEY, JSON.stringify(
-      { mode: state.mode, unsure: state.unsure, desserts: state.desserts, hidden: state.hidden }));
+      { hidden: state.hidden }));
   } catch (e) {}
 }
 
@@ -128,15 +124,6 @@ function renderControls() {
   }
   document.getElementById("days").replaceWith(Object.assign(days, { id: "days" }));
 
-  const modes = el("div", { className: "row", id: "modes" });
-  for (const [key, label] of MODES) {
-    const b = el("button", { className: "chip", textContent: label });
-    b.setAttribute("aria-pressed", String(state.mode === key));
-    b.onclick = () => { state.mode = key; saveSettings(); render(); };
-    modes.append(b);
-  }
-  document.getElementById("modes").replaceWith(modes);
-
   const rs = el("div", { className: "toggle-list", id: "restaurants" });
   for (const r of data.restaurants) {
     rs.append(checkbox(r.name, "restaurant-" + r.id, !state.hidden[r.id], (v) => { state.hidden[r.id] = !v; }));
@@ -170,9 +157,7 @@ function renderRestaurant(r) {
 
   let shown = 0;
   for (const meal of (day ? day.meals : [])) {
-    if (!state.desserts && MenuFilters.isDessert(meal.category)) continue;
     const status = MenuFilters.classifyMeal(meal);
-    if (!MenuFilters.visible(status, state.mode, state.unsure)) continue;
     shown++;
     const m = el("div", { className: "meal" });
     const title = el("span", { textContent: meal.category || "Lunch" });
@@ -186,7 +171,7 @@ function renderRestaurant(r) {
     }
     card.append(m);
   }
-  if (!shown) card.append(el("div", { className: "empty", textContent: day && day.meals.length ? "Nothing matches your filters." : "Closed, or no menu published." }));
+  if (!shown) card.append(el("div", { className: "empty", textContent: day && day.meals.length ? "No meals available." : "Closed, or no menu published." }));
   return card;
 }
 
@@ -200,7 +185,7 @@ function render() {
   }
   const upd = data.updatedAt ? new Date(data.updatedAt).toLocaleString("fi-FI") : "unknown";
   document.getElementById("foot").textContent =
-    "Menus updated " + upd + ". Diet tags and the meat filter are automatic and can be wrong; check allergens at the restaurant.";
+    "Menus updated " + upd + ". Diet tags and meal labels are automatic and can be wrong; check allergens at the restaurant.";
 }
 
 loadSettings();
