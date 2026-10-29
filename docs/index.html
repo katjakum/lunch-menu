@@ -21,12 +21,22 @@
   h1 { font-size: 1.4rem; margin: 0 0 12px; }
   .controls { display: grid; gap: 10px; margin-bottom: 16px; }
   .row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-  button.chip, label.chip {
+  button.chip {
     border: 1px solid var(--line); background: var(--card); color: var(--fg);
-    padding: 6px 12px; border-radius: 999px; font: inherit; font-size: .9rem; cursor: pointer;
+    min-height: 44px; padding: 8px 12px; border-radius: 999px; font: inherit; font-size: .9rem; cursor: pointer;
   }
-  button.chip[aria-pressed="true"], label.chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
-  label.chip input { margin-right: 6px; }
+  button.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .control-group { margin: 0; padding: 0; border: 0; min-width: 0; }
+  .control-group legend { padding: 0; margin-bottom: 6px; font-size: .85rem; font-weight: 600; color: var(--muted); }
+  .toggle-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); cursor: pointer; }
+  .toggle span { font-size: .9rem; }
+  .toggle input { appearance: none; -webkit-appearance: none; flex: 0 0 42px; width: 42px; height: 26px; margin: 0; border: 2px solid var(--muted); border-radius: 999px; background: var(--muted); cursor: pointer; position: relative; }
+  .toggle input::before { content: ""; position: absolute; width: 18px; height: 18px; top: 2px; left: 2px; border-radius: 50%; background: var(--card); }
+  .toggle input:checked { background: var(--accent); border-color: var(--accent); }
+  .toggle input:checked::before { left: 18px; background: #fff; }
+  button:focus-visible, .toggle input:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  @media (max-width: 480px) { .toggle-list { grid-template-columns: 1fr; } }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 14px; }
   .card h2 { font-size: 1.1rem; margin: 0; }
   .sub { color: var(--muted); font-size: .85rem; }
@@ -50,10 +60,10 @@
 <main>
   <h1>Kuopio lounas</h1>
   <div class="controls">
-    <div class="row" id="days"></div>
-    <div class="row" id="modes"></div>
-    <div class="row" id="options"></div>
-    <div class="row" id="restaurants"></div>
+    <fieldset class="control-group"><legend>Day</legend><div class="row" id="days"></div></fieldset>
+    <fieldset class="control-group"><legend>Diet</legend><div class="row" id="modes"></div></fieldset>
+    <fieldset class="control-group"><legend>Menu options</legend><div class="toggle-list" id="options"></div></fieldset>
+    <fieldset class="control-group"><legend>Show restaurants</legend><div class="toggle-list" id="restaurants"></div></fieldset>
   </div>
   <div id="out"></div>
   <footer id="foot"></footer>
@@ -128,22 +138,26 @@ function renderControls() {
   }
   document.getElementById("modes").replaceWith(modes);
 
-  const opts = el("div", { className: "row", id: "options" });
-  opts.append(checkbox("Include “not sure” dishes", state.unsure, (v) => { state.unsure = v; }));
-  opts.append(checkbox("Show desserts", state.desserts, (v) => { state.desserts = v; }));
+  const opts = el("div", { className: "toggle-list", id: "options" });
+  opts.append(checkbox("Include dishes with unknown diet", "option-unsure", state.unsure, (v) => { state.unsure = v; }));
+  opts.append(checkbox("Show desserts", "option-desserts", state.desserts, (v) => { state.desserts = v; }));
   document.getElementById("options").replaceWith(opts);
 
-  const rs = el("div", { className: "row", id: "restaurants" });
+  const rs = el("div", { className: "toggle-list", id: "restaurants" });
   for (const r of data.restaurants) {
-    rs.append(checkbox(r.name, !state.hidden[r.id], (v) => { state.hidden[r.id] = !v; }));
+    rs.append(checkbox(r.name, "restaurant-" + r.id, !state.hidden[r.id], (v) => { state.hidden[r.id] = !v; }));
   }
   document.getElementById("restaurants").replaceWith(rs);
 }
 
-function checkbox(label, checked, onchange) {
-  const input = el("input", { type: "checkbox", checked });
-  const l = el("label", { className: "chip" + (checked ? " on" : "") }, input, label);
-  input.onchange = () => { onchange(input.checked); saveSettings(); render(); };
+function checkbox(label, id, checked, onchange) {
+  const input = el("input", { type: "checkbox", id, checked });
+  input.setAttribute("role", "switch");
+  const l = el("label", { className: "toggle" }, el("span", { textContent: label }), input);
+  input.onchange = () => {
+    onchange(input.checked); saveSettings(); render();
+    document.getElementById(id)?.focus({ preventScroll: true });
+  };
   return l;
 }
 
