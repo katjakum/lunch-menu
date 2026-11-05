@@ -6,127 +6,6 @@
    "url": "https://www.compass-group.fi/ravintolat-ja-ruokalistat/foodco/kaupungit/kuopio/ita-suomen-yliopistosnellmania/",
    "days": [
     {
-     "date": "2026-11-04",
-     "lunchTime": "10:30–14:30",
-     "meals": [
-      {
-       "category": "Kasviskeitto",
-       "priceText": "Opiskelija 1,46 € / Henkilökunta 4,59€ / Vierailija 4,59 €",
-       "studentPrice": 1.46,
-       "dishes": [
-        {
-         "name": "Puutarhurin juuressosekeittoa",
-         "diets": [
-          "*",
-          "A",
-          "L",
-          "M",
-          "Veg"
-         ]
-        },
-        {
-         "name": "Paahdettuja siemeniä",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "Veg"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Kasvislounas",
-       "priceText": "Opiskelija 1,87 € / Henkilökunta 5,03 € / Vierailija 5,03€",
-       "studentPrice": 1.87,
-       "dishes": [
-        {
-         "name": "Pennepastaa, vuohenjuustoa ja tomaattia",
-         "diets": [
-          "*",
-          "A",
-          "ILM",
-          "L",
-          "VS"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Kotiruokalounas",
-       "priceText": "Opiskelija 2,95 € / Henkilökunta 6,19 € / Vierailija 6,22 €",
-       "studentPrice": 2.95,
-       "dishes": [
-        {
-         "name": "Tandoorikanaa jogurttikastikkeessa",
-         "diets": [
-          "*",
-          "A",
-          "G",
-          "L"
-         ]
-        },
-        {
-         "name": "Tummaa riisiä",
-         "diets": [
-          "*",
-          "G",
-          "L",
-          "M",
-          "Veg"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Annosruoka",
-       "priceText": "Opiskelija 5,60 € / Henkilökunta 9,05 € / Vierailija 12,50 €",
-       "studentPrice": 5.6,
-       "dishes": [
-        {
-         "name": "BBQ Broileri-pannupizzaa ja fetaa",
-         "diets": [
-          "A",
-          "L",
-          "VS"
-         ]
-        },
-        {
-         "name": "Mango-sitruunashotti",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "Veg"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Pieni makea ihana",
-       "priceText": "Opiskelija 0,66€ / Henkilökunta 0,66 € / Vierailija 1,40 €",
-       "studentPrice": 0.66,
-       "dishes": [
-        {
-         "name": "Kirsikka-kaurapiirakkaa",
-         "diets": [
-          "A",
-          "L"
-         ]
-        },
-        {
-         "name": "Vaniljakastiketta",
-         "diets": [
-          "A",
-          "G",
-          "L"
-         ]
-        }
-       ]
-      }
-     ]
-    },
-    {
      "date": "2026-11-05",
      "lunchTime": "10:30–14:30",
      "meals": [
@@ -519,156 +398,6 @@
    "url": "https://www.compass-group.fi/ravintolat-ja-ruokalistat/foodco/kaupungit/kuopio/tietoteknia/",
    "days": [
     {
-     "date": "2026-11-04",
-     "lunchTime": "10:30–14:00",
-     "meals": [
-      {
-       "category": "PÄIVÄN SOPPA",
-       "priceText": "11,00€ / opisk. 3,10€",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Sipulikeittoa, krutonkeja ja juustoa",
-         "diets": [
-          "*",
-          "A",
-          "ILM",
-          "L"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "LOUNAS BUFFA",
-       "priceText": "13,30€ / opisk.3,10 €",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Tofua vihreässä currykastikkeessa - Luomutofu Green Curry",
-         "diets": [
-          "*",
-          "A",
-          "G",
-          "ILM",
-          "L",
-          "M",
-          "Veg",
-          "VS"
-         ]
-        },
-        {
-         "name": "Tummaa riisiä",
-         "diets": [
-          "*",
-          "G",
-          "L",
-          "M",
-          "Veg"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "LOUNAS BUFFA",
-       "priceText": "13,30€ / opisk. 3,10 €",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Kylmäsavukirjolohikiusausta",
-         "diets": [
-          "*",
-          "A",
-          "G",
-          "ILM",
-          "L"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "LOUNAS BUFFA",
-       "priceText": "13,30€ / opisk. 3,10€",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Jauhelihakebakoita",
-         "diets": [
-          "A",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Paahdettua perunaa",
-         "diets": [
-          "*",
-          "G",
-          "ILM",
-          "L",
-          "M",
-          "Veg"
-         ]
-        },
-        {
-         "name": "Chili-kermaviilikastiketta",
-         "diets": [
-          "A",
-          "G",
-          "L"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "LOUNAS BUFFA",
-       "priceText": "13,30 €",
-       "studentPrice": null,
-       "dishes": [
-        {
-         "name": "Porsaan grillipihvi",
-         "diets": [
-          "*",
-          "G",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Tummaa piparjuurikastiketta",
-         "diets": [
-          "A",
-          "G",
-          "L",
-          "M"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "JÄLKKÄRI",
-       "priceText": "Opisk. 1,80€",
-       "studentPrice": 1.8,
-       "dishes": [
-        {
-         "name": "Kirsikka-kaurapiirakkaa",
-         "diets": [
-          "A",
-          "L"
-         ]
-        },
-        {
-         "name": "Vaniljakastiketta",
-         "diets": [
-          "A",
-          "G",
-          "L"
-         ]
-        }
-       ]
-      }
-     ]
-    },
-    {
      "date": "2026-11-05",
      "lunchTime": "10:30–14:00",
      "meals": [
@@ -929,175 +658,6 @@
    "name": "Canthia",
    "url": "https://www.compass-group.fi/ravintolat-ja-ruokalistat/foodco/kaupungit/kuopio/ita-suomen-yliopistocanthia/",
    "days": [
-    {
-     "date": "2026-11-04",
-     "lunchTime": "10:30–14:30",
-     "meals": [
-      {
-       "category": "Kasviskeitto",
-       "priceText": "Op 1,46 € / Hk 4,59 € / Vieras 4,59€",
-       "studentPrice": 1.46,
-       "dishes": [
-        {
-         "name": "Luomuohrasuurimopuuroa",
-         "diets": [
-          "*",
-          "A",
-          "ILM",
-          "L"
-         ]
-        },
-        {
-         "name": "Mehukeittoa",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "Veg"
-         ]
-        },
-        {
-         "name": "Edamjuustoa",
-         "diets": [
-          "A",
-          "G",
-          "L"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Kasvislounas",
-       "priceText": "Op 1,87 € / Hk 5,03€ / Vieras 5,03€",
-       "studentPrice": 1.87,
-       "dishes": [
-        {
-         "name": "Tofua, kasviksia ja pähkinää -Tahu goreng Indonesia",
-         "diets": [
-          "*",
-          "A",
-          "G",
-          "ILM",
-          "L",
-          "M",
-          "Veg",
-          "VS"
-         ]
-        },
-        {
-         "name": "Tummaa riisiä",
-         "diets": [
-          "*",
-          "G",
-          "L",
-          "M",
-          "Veg"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Kotiruokalounas",
-       "priceText": "Op 2,95 € / Hk 6,19€ / Vieras 6,22€",
-       "studentPrice": 2.95,
-       "dishes": [
-        {
-         "name": "Lindströminpihvejä",
-         "diets": [
-          "*",
-          "G",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Sipulikastiketta",
-         "diets": [
-          "*",
-          "A",
-          "G",
-          "ILM",
-          "L"
-         ]
-        },
-        {
-         "name": "Persiljaperunoita",
-         "diets": [
-          "*",
-          "A",
-          "G",
-          "ILM",
-          "L",
-          "M",
-          "Veg"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Pieni makea ihanuus",
-       "priceText": "Op 0,66 € / Hk 0,66€ / Vieras 1,40 €",
-       "studentPrice": 0.66,
-       "dishes": [
-        {
-         "name": "Puutarhamarja-ruismurupaistosta",
-         "diets": [
-          "A",
-          "L",
-          "M",
-          "Veg"
-         ]
-        },
-        {
-         "name": "Vaniljakastiketta",
-         "diets": [
-          "A",
-          "G",
-          "L"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Wicked Rabbit kasvisbuffa",
-       "priceText": "Op 5,60 € / Hk 9,50€ / Vieras 12,50€",
-       "studentPrice": 5.6,
-       "dishes": [
-        {
-         "name": "Briossi BRG, mausteista kanatonta täytettä ja chimichurria",
-         "diets": [
-          "A",
-          "L",
-          "Veg",
-          "VS"
-         ]
-        },
-        {
-         "name": "Savupaprikalla paahdettuja perunoita",
-         "diets": [
-          "*",
-          "G",
-          "ILM",
-          "L",
-          "M",
-          "Veg",
-          "VS"
-         ]
-        },
-        {
-         "name": "Amerikkalaista chilimajoneesia",
-         "diets": [
-          "A",
-          "G",
-          "L",
-          "M",
-          "Veg"
-         ]
-        }
-       ]
-      }
-     ]
-    },
     {
      "date": "2026-11-05",
      "lunchTime": "10:30–14:30",
@@ -1687,6 +1247,14 @@
           "M",
           "VEG"
          ]
+        },
+        {
+         "name": "Janssonin kiusausta",
+         "diets": [
+          "A",
+          "G",
+          "L"
+         ]
         }
        ]
       },
@@ -1721,7 +1289,7 @@
        "studentPrice": 3.1,
        "dishes": [
         {
-         "name": "Juusto-pinaattilasagnea",
+         "name": "Juusto-pinaattilasagnette",
          "diets": [
           "A",
           "L"
@@ -2282,5 +1850,5 @@
    ]
   }
  ],
- "updatedAt": "2026-11-04T12:06:43+00:00"
+ "updatedAt": "2026-11-05T12:18:21+00:00"
 }
