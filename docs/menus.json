@@ -1382,15 +1382,11 @@
        "studentPrice": 1.46,
        "dishes": [
         {
-         "name": "Yrttistä porkkanasosekeittoa",
+         "name": "Metsäsienikeittoa",
          "diets": [
           "*",
           "A",
-          "G",
-          "ILM",
-          "L",
-          "M",
-          "Veg"
+          "L"
          ]
         },
         {
@@ -1426,13 +1422,13 @@
        "studentPrice": 2.95,
        "dishes": [
         {
-         "name": "Manteliseitiä",
+         "name": "Katkarapu-jalopenopataa",
          "diets": [
           "*",
           "A",
           "G",
-          "ILM",
-          "L"
+          "L",
+          "VS"
          ]
         },
         {
@@ -2372,5 +2368,5 @@
    ]
   }
  ],
- "updatedAt": "2026-11-11T11:52:03+00:00"
+ "updatedAt": "2026-11-11T16:07:36+00:00"
 }
