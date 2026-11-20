@@ -6,149 +6,6 @@
    "url": "https://www.compass-group.fi/ravintolat-ja-ruokalistat/foodco/kaupungit/kuopio/ita-suomen-yliopistosnellmania/",
    "days": [
     {
-     "date": "2026-11-19",
-     "lunchTime": "10:30–14:30",
-     "meals": [
-      {
-       "category": "Kasviskeitto",
-       "priceText": "Opiskelija 1,46 € / Henkilökunta 4,59€ / Vierailija 4,59 €",
-       "studentPrice": 1.46,
-       "dishes": [
-        {
-         "name": "Puutarhurin juuressosekeittoa",
-         "diets": [
-          "*",
-          "A",
-          "L"
-         ]
-        },
-        {
-         "name": "Paahdettuja siemeniä",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "Veg"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Kasvislounas",
-       "priceText": "Opiskelija 1,87 € / Henkilökunta 5,03 € / Vierailija 5,03€",
-       "studentPrice": 1.87,
-       "dishes": [
-        {
-         "name": "Sisilialaista seitanpastaa",
-         "diets": [
-          "*",
-          "A",
-          "ILM",
-          "L",
-          "M",
-          "Veg",
-          "VS"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Kotiruokalounas",
-       "priceText": "Opiskelija 2,95 € / Henkilökunta 6,19 € / Vierailija 6,22 €",
-       "studentPrice": 2.95,
-       "dishes": [
-        {
-         "name": "Tomaattista kebabkastiketta kasviksilla",
-         "diets": [
-          "G",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Tummaa riisiä",
-         "diets": [
-          "*",
-          "G",
-          "L",
-          "M",
-          "Veg"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Annosruoka",
-       "priceText": "Opiskelija 5,60 € / Henkilökunta 9,05 € / Vierailija 12,50 €",
-       "studentPrice": 5.6,
-       "dishes": [
-        {
-         "name": "Paahdettua kirjolohta",
-         "diets": [
-          "*",
-          "A",
-          "G",
-          "ILM",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Sitruunamajoneesia",
-         "diets": [
-          "A",
-          "G",
-          "ILM",
-          "L"
-         ]
-        },
-        {
-         "name": "Dijon-perunamuusia",
-         "diets": [
-          "*",
-          "A",
-          "G",
-          "ILM",
-          "L"
-         ]
-        },
-        {
-         "name": "Satokauden kasviksia",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "Veg"
-         ]
-        },
-        {
-         "name": "Appelsiini-porkkana-kurkumashotti",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "Veg"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Pieni makea ihana",
-       "priceText": "Opiskelija 0,66€ / Henkilökunta 0,66 € / Vierailija 1,40 €",
-       "studentPrice": 0.66,
-       "dishes": [
-        {
-         "name": "Mariannerahkaa",
-         "diets": [
-          "A",
-          "L"
-         ]
-        }
-       ]
-      }
-     ]
-    },
-    {
      "date": "2026-11-20",
      "lunchTime": "10:30–14:00",
      "meals": [
@@ -408,133 +265,6 @@
    "url": "https://www.compass-group.fi/ravintolat-ja-ruokalistat/foodco/kaupungit/kuopio/tietoteknia/",
    "days": [
     {
-     "date": "2026-11-19",
-     "lunchTime": "10:30–14:00",
-     "meals": [
-      {
-       "category": "LOUNAS BUFFA",
-       "priceText": "13,30€ / opisk.3,10 €",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Tofua ja herneita mausteisessa kastikkeessa - Tofu Matar Paneer",
-         "diets": [
-          "*",
-          "A",
-          "G",
-          "ILM",
-          "L",
-          "M",
-          "Veg"
-         ]
-        },
-        {
-         "name": "Tummaa riisiä",
-         "diets": [
-          "*",
-          "G",
-          "L",
-          "M",
-          "Veg"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "LOUNAS BUFFA",
-       "priceText": "13,30€ / opisk. 3,10 €",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Jauheliha-kaalilaatikkoa",
-         "diets": [
-          "*",
-          "G",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Hillottua puolukkaa",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "Veg"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "LOUNAS BUFFA",
-       "priceText": "13,30€ / opisk. 3,10€",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Rapeita kalapyöryköitä",
-         "diets": [
-          "*",
-          "A",
-          "G",
-          "ILM",
-          "L"
-         ]
-        },
-        {
-         "name": "Paahdettua perunaa",
-         "diets": [
-          "*",
-          "G",
-          "ILM",
-          "L",
-          "M",
-          "Veg"
-         ]
-        },
-        {
-         "name": "Tartarjogurttia",
-         "diets": [
-          "*",
-          "A",
-          "G",
-          "L"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "LOUNAS BUFFA",
-       "priceText": "13,30 €",
-       "studentPrice": null,
-       "dishes": [
-        {
-         "name": "Juustolla ja paprikalla täytetty broilerinfilee",
-         "diets": [
-          "*",
-          "A",
-          "G",
-          "L"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "JÄLKKÄRI",
-       "priceText": "Opisk. 1,80€",
-       "studentPrice": 1.8,
-       "dishes": [
-        {
-         "name": "Mariannerahkaa",
-         "diets": [
-          "A",
-          "L"
-         ]
-        }
-       ]
-      }
-     ]
-    },
-    {
      "date": "2026-11-20",
      "lunchTime": "10:30–14:00",
      "meals": [
@@ -671,105 +401,6 @@
    "url": "https://www.compass-group.fi/ravintolat-ja-ruokalistat/foodco/kaupungit/kuopio/ita-suomen-yliopistocanthia/",
    "days": [
     {
-     "date": "2026-11-19",
-     "lunchTime": "10:30–14:30",
-     "meals": [
-      {
-       "category": "Kasviskeitto",
-       "priceText": "Op 1,46 € / Hk 4,59 € / Vieras 4,59€",
-       "studentPrice": 1.46,
-       "dishes": [
-        {
-         "name": "Herkkusienikeittoa",
-         "diets": [
-          "*",
-          "A",
-          "ILM",
-          "L"
-         ]
-        },
-        {
-         "name": "Paahdettuja siemeniä",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "Veg"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Kasvislounas",
-       "priceText": "Op 1,87 € / Hk 5,03€ / Vieras 5,03€",
-       "studentPrice": 1.87,
-       "dishes": [
-        {
-         "name": "Basilikalla maustettua soijarouhelasagnettea",
-         "diets": [
-          "*",
-          "A",
-          "ILM",
-          "L",
-          "M",
-          "Veg"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Kotiruokalounas",
-       "priceText": "Op 2,95 € / Hk 6,19€ / Vieras 6,22€",
-       "studentPrice": 2.95,
-       "dishes": [
-        {
-         "name": "Jauhelihapyöryköitä",
-         "diets": [
-          "*",
-          "A",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Pippurikastiketta",
-         "diets": [
-          "*",
-          "A",
-          "G",
-          "ILM",
-          "L"
-         ]
-        },
-        {
-         "name": "Perunamuusia",
-         "diets": [
-          "*",
-          "A",
-          "G",
-          "ILM",
-          "L"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Pieni makea ihanuus",
-       "priceText": "Op 0,66 € / Hk 0,66€ / Vieras 1,40 €",
-       "studentPrice": 0.66,
-       "dishes": [
-        {
-         "name": "Mariannerahkaa",
-         "diets": [
-          "A",
-          "L"
-         ]
-        }
-       ]
-      }
-     ]
-    },
-    {
      "date": "2026-11-20",
      "lunchTime": "10:30–14:00",
      "meals": [
@@ -834,17 +465,21 @@
        "studentPrice": 2.95,
        "dishes": [
         {
-         "name": "Broileria tulisessa ja mausteisessa kastikkeessa - Broileri Vindaloo",
+         "name": "Broileria sinihomejuustokastikkeessa",
          "diets": [
           "*",
           "A",
-          "G",
           "ILM",
-          "L",
-          "M",
-          "VS"
+          "L"
          ]
-        },
+        }
+       ]
+      },
+      {
+       "category": "Kotiruokalounas",
+       "priceText": "Op 2,95 € / Hk 6,19€ / Vieras 6,22€",
+       "studentPrice": 2.95,
+       "dishes": [
         {
          "name": "Tummaa riisiä",
          "diets": [
@@ -883,7 +518,7 @@
          ]
         },
         {
-         "name": "Dijon-perunamuusia",
+         "name": "Perunamuusia",
          "diets": [
           "*",
           "A",
@@ -947,458 +582,6 @@
    "name": "Antell Round",
    "url": "https://antell.fi/lounas/kuopio/round/",
    "days": [
-    {
-     "date": "2026-11-16",
-     "lunchTime": "10.00–13.30",
-     "meals": [
-      {
-       "category": "Kotiruokalounas",
-       "priceText": "Opiskelija 3,10 € / täysi 12,50 €",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Pozole rojo - possua meksikolaisittain",
-         "diets": [
-          "G",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Riisiä",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Makumatka",
-       "priceText": "Opiskelija 5,90 € / täysi 12,50 €",
-       "studentPrice": 5.9,
-       "dishes": [
-        {
-         "name": "Kanaa mausteisessa cajun-kastikkeessa",
-         "diets": [
-          "A",
-          "G",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Dirty rice - vihannesriisiä",
-         "diets": [
-          "A",
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Kasvislounas",
-       "priceText": "Opiskelija 3,10 € / täysi 12,50 €",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Papu-kasvistacoja",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        },
-        {
-         "name": "Avokado-kermaviilikastiketta",
-         "diets": [
-          "A",
-          "G",
-          "L"
-         ]
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "date": "2026-11-17",
-     "lunchTime": "10.00–13.30",
-     "meals": [
-      {
-       "category": "Kotiruokalounas",
-       "priceText": "Opiskelija 3,10 € / täysi 12,50 €",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Kanatortilloja",
-         "diets": [
-          "A",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Mango-jogurttikastiketta",
-         "diets": [
-          "A",
-          "G",
-          "L"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Makumatka",
-       "priceText": "Opiskelija 5,90 € / täysi 12,50 €",
-       "studentPrice": 5.9,
-       "dishes": [
-        {
-         "name": "Chimichurri-maustettua possua",
-         "diets": [
-          "A",
-          "G",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Gremolata maustettuja lohkoperunoita",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Kasvislounas",
-       "priceText": "Opiskelija 3,10 € / täysi 12,50 €",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Meksikolaisia kasvistortilloja",
-         "diets": [
-          "A",
-          "L",
-          "M",
-          "VEG"
-         ]
-        },
-        {
-         "name": "Mango-jogurttikastiketta",
-         "diets": [
-          "A",
-          "G",
-          "L"
-         ]
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "date": "2026-11-18",
-     "lunchTime": "10.00–13.30",
-     "meals": [
-      {
-       "category": "Kotiruokalounas",
-       "priceText": "Opiskelija 3,10 € / täysi 12,50 €",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Cheddar-uunimakkaraa",
-         "diets": [
-          "A",
-          "G",
-          "VL"
-         ]
-        },
-        {
-         "name": "Chilimajoneesia",
-         "diets": [
-          "A",
-          "G",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Perunoita",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Makumatka",
-       "priceText": "Opiskelija 5,90 € / täysi 12,50 €",
-       "studentPrice": 5.9,
-       "dishes": [
-        {
-         "name": "Crispy chicken - rapeaa kanaa",
-         "diets": [
-          "A",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Grillattuja maissintähkiä",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        },
-        {
-         "name": "Chipotlemaustettua ranskankermaa",
-         "diets": [
-          "A",
-          "G",
-          "L"
-         ]
-        },
-        {
-         "name": "Grilliperunoita",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Kasvislounas",
-       "priceText": "Opiskelija 3,10 € / täysi 12,50 €",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Mausteista kukkakaali-juustovuokaa",
-         "diets": [
-          "A",
-          "G",
-          "VL"
-         ]
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "date": "2026-11-19",
-     "lunchTime": "10.00–13.30",
-     "meals": [
-      {
-       "category": "Kotiruokalounas",
-       "priceText": "Opiskelija 3,10 € / täysi 12,50 €",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Jauhelihatacoja",
-         "diets": [
-          "G",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Chipotlemaustettua ranskankermaa",
-         "diets": [
-          "A",
-          "G",
-          "L"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Makumatka",
-       "priceText": "Opiskelija 5,90 € / täysi 12,50 €",
-       "studentPrice": 5.9,
-       "dishes": [
-        {
-         "name": "Rapeita kalaleikkeitä",
-         "diets": [
-          "A"
-         ]
-        },
-        {
-         "name": "Valkosipuli-yrttiöljyä",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        },
-        {
-         "name": "Srirachamajoneesia",
-         "diets": [
-          "A",
-          "G",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Chilipaahdettua bataattia",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Kasvislounas",
-       "priceText": "Opiskelija 3,10 € / täysi 12,50 €",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Paahdettua tomaattikeittoa",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        },
-        {
-         "name": "Maustepaahdettuja kikherneitä",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "date": "2026-11-20",
-     "lunchTime": "10.00–13.30",
-     "meals": [
-      {
-       "category": "Kotiruokalounas",
-       "priceText": "Opiskelija 3,10 € / täysi 12,50 €",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Sticky chili wings - chilimaustettuja tahmeita kanansiipiä",
-         "diets": [
-          "A",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Paprikalohkoperunoita",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        },
-        {
-         "name": "Jalapenomoussea",
-         "diets": [
-          "A",
-          "G",
-          "L"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Makumatka",
-       "priceText": "Opiskelija 5,90 € / täysi 12,50 €",
-       "studentPrice": 5.9,
-       "dishes": [
-        {
-         "name": "Meksikolainen beef chili - lihapataa",
-         "diets": [
-          "G",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Riisiä",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        },
-        {
-         "name": "Valkosipulipapuja",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        }
-       ]
-      },
-      {
-       "category": "Kasvislounas",
-       "priceText": "Opiskelija 3,10 € / täysi 12,50 €",
-       "studentPrice": 3.1,
-       "dishes": [
-        {
-         "name": "Meksikolaisia kasvispihvejä",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        },
-        {
-         "name": "Aiolia",
-         "diets": [
-          "A",
-          "G",
-          "L",
-          "M"
-         ]
-        },
-        {
-         "name": "Perunoita",
-         "diets": [
-          "G",
-          "L",
-          "M",
-          "VEG"
-         ]
-        }
-       ]
-      }
-     ]
-    },
     {
      "date": "2026-11-23",
      "lunchTime": "10.00–13.30",
@@ -1757,29 +940,29 @@
        "studentPrice": 3.1,
        "dishes": [
         {
-         "name": "Pestolla maustettua tomaattikeittoa",
+         "name": "Punajuuripyöryköitä",
          "diets": [
-          "A",
-          "G",
-          "L"
-         ]
-        },
-        {
-         "name": "Raejuustoa",
-         "diets": [
-          "A",
-          "G",
-          "L"
-         ]
-        },
-        {
-         "name": "Basilika-tomaattikeittoa",
-         "diets": [
-          "A",
           "G",
           "L",
           "M",
           "VEG"
+         ]
+        },
+        {
+         "name": "Perunoita",
+         "diets": [
+          "G",
+          "L",
+          "M",
+          "VEG"
+         ]
+        },
+        {
+         "name": "Aurajuustokastiketta",
+         "diets": [
+          "A",
+          "G",
+          "L"
          ]
         }
        ]
@@ -1869,21 +1052,19 @@
        "studentPrice": 3.1,
        "dishes": [
         {
-         "name": "Punajuuripyöryköitä",
+         "name": "Pestolla maustettua tomaattikeittoa",
          "diets": [
+          "A",
           "G",
-          "L",
-          "M",
-          "VEG"
+          "L"
          ]
         },
         {
-         "name": "Perunoita",
+         "name": "Raejuustoa",
          "diets": [
+          "A",
           "G",
-          "L",
-          "M",
-          "VEG"
+          "L"
          ]
         },
         {
@@ -1893,6 +1074,16 @@
           "G",
           "L"
          ]
+        },
+        {
+         "name": "Basilika-tomaattikeittoa",
+         "diets": [
+          "A",
+          "G",
+          "L",
+          "M",
+          "VEG"
+         ]
         }
        ]
       }
@@ -1901,5 +1092,5 @@
    ]
   }
  ],
- "updatedAt": "2026-11-19T13:01:48+00:00"
+ "updatedAt": "2026-11-20T12:52:11+00:00"
 }
